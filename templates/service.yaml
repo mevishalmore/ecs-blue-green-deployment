@@ -101,6 +101,8 @@ Resources:
     Type: AWS::ECS::Service
     Properties:
       Cluster: !Ref Cluster
+      DeploymentController:
+        - Type: CODE_DEPLOY
       Role: !Ref ECSServiceRole
       DesiredCount: !Ref DesiredCount
       TaskDefinition: !Ref TaskDefinition
